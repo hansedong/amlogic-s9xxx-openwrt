@@ -1,4 +1,5 @@
 !.gitignore
+.idea
 /make-openwrt/kernel
 /make-openwrt/u-boot
 /openwrt
