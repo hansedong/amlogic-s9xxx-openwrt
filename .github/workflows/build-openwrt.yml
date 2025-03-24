@@ -352,6 +352,16 @@ jobs:
           find dl -size -1024c -exec ls -l {} \;
           find dl -size -1024c -exec rm -f {} \;
 
+      - name: prepare denpends
+        id: prepare
+        run: |
+          # Prepare dependence of luci-app-aliddns
+          cd /tmp/
+          git clone https://github.com/openwrt-dev/po2lmo.git
+          pushd po2lmo
+          make && sudo make install
+          popd
+
       - name: Compile the OpenWrt
         id: compile
         run: |
